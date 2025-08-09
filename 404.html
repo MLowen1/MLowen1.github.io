@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Mike Lowen</title>
+<style>
+  :root{ --bg:#0c0c0e; --fg:#ffffff; --muted:#b8b8bd; --card:#141418; --accent:#0a84ff; }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f7f7fb; --fg:#0d0d10; --muted:#55565e; --card:#ffffff; --accent:#0a84ff; }
+  }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  html, body{ height:100%; background:var(--bg); color:var(--fg);
+    font:16px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,system-ui; }
+  body{ display:flex; align-items:center; justify-content:center; padding:24px; }
+  .card{
+    background:var(--card); border:1px solid rgba(128,128,160,.14); border-radius:20px;
+    padding:28px 22px; box-shadow:0 10px 30px rgba(0,0,0,.25); max-width:480px; text-align:center;
+  }
+  h1{ font-size:48px; margin-bottom:8px; }
+  p{ color:var(--muted); margin-bottom:16px; }
+  button{
+    appearance:none; padding:10px 16px; border-radius:12px;
+    border:1px solid rgba(128,128,160,.25); background:transparent; color:var(--fg); font-size:15px;
+  }
+  button:active{ transform:translateY(1px); }
+</style>
+
+<body>
+  <div class="card">
+    <h1>404</h1>
+    <p>That page doesn’t exist.</p>
+    <button id="homeBtn">Go back home</button>
+  </div>
+
+  <script>
+    // In PWA or browser, send a normal same-origin navigation so the SW handles it.
+    document.getElementById('homeBtn').addEventListener('click', () => {
+      // Prefer replace so the 404 doesn’t stay in history
+      location.replace('/');
+    });
+  </script>
+</body>
+</html>

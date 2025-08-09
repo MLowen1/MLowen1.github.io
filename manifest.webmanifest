@@ -1,0 +1,9 @@
+{
+  "name": "Your Name — Portfolio",
+  "short_name": "Portfolio",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#0c0c0e",
+  "theme_color": "#0a84ff"
+}
